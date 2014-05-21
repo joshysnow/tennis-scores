@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisScores", "TennisScores\TennisScores.csproj", "{928005D5-2AC2-49D3-BDF6-2B231E445D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interpreter", "Interpreter\Interpreter.csproj", "{546C5C09-F8E5-48F8-845C-6A59A7155544}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{928005D5-2AC2-49D3-BDF6-2B231E445D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{928005D5-2AC2-49D3-BDF6-2B231E445D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{928005D5-2AC2-49D3-BDF6-2B231E445D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{928005D5-2AC2-49D3-BDF6-2B231E445D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546C5C09-F8E5-48F8-845C-6A59A7155544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546C5C09-F8E5-48F8-845C-6A59A7155544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546C5C09-F8E5-48F8-845C-6A59A7155544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546C5C09-F8E5-48F8-845C-6A59A7155544}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

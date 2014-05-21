@@ -1,0 +1,7 @@
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\bin\Debug\InterpreterTests.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\bin\Debug\InterpreterTests.pdb
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\bin\Debug\Interpreter.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\bin\Debug\Interpreter.pdb
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\obj\Debug\InterpreterTests.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\obj\Debug\InterpreterTests.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\InterpreterTests\obj\Debug\InterpreterTests.pdb
