@@ -1,45 +1,48 @@
-﻿using System;
-
-namespace Interpreter
+﻿namespace Interpreter
 {
-    internal class Game
+    internal sealed class Game : IReader
     {
-        private Player _a;
-        private Player _b;
         private GameScore _serverScore;
         private GameScore _receiverScore;
 
-        public Game(Player a, Player b)
+        public Game()
         {
-            _a = a;
-            _b = b;
             _serverScore = GameScore.LOVE;
             _receiverScore = GameScore.LOVE;
         }
 
-        public bool ReadScore(char score)
+        public override bool WinConditionMet()
         {
-            bool gameWon = false;
+            return false;
+        }
 
-            if (char.IsWhiteSpace(score))
+        protected override void ExtractValue(char character)
+        {
+
+            if (char.IsWhiteSpace(character))
             {
-
+                // Do nothing.
             }
             else if ((_serverScore == GameScore.ADVANTAGE) || (_receiverScore == GameScore.ADVANTAGE))
             {
-
+                // Win.
             }
             else
             {
-
+                // Up score.
+                // If receiver, increase receiver score
+                // If server, increase server score
             }
+        }
 
-            return gameWon;
+        protected override void CalculateWinCondition()
+        {
+            
         }
 
         public override string ToString()
         {
-            return _serverScore + "-" + _receiverScore + string.Empty;
+            return _serverScore + "-" + _receiverScore;
         }
     }
 }

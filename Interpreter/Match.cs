@@ -23,9 +23,11 @@ namespace Interpreter
 
             for (int i = 0; i < scores.Length; i++)
             {
-                if (set.ReadScore(scores[i]))
-                {
+                set.ReadCharacter(scores[i]);
 
+                if (set.WinConditionMet())
+                {
+                    set = new Set();
                 }
             }
         }

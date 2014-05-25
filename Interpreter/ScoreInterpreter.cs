@@ -6,21 +6,16 @@ namespace Interpreter
 {
     public class ScoreInterpreter
     {
-        public static ScoreInterpreter Instance
-        {
-            get
-            {
-                return _instance;
-            }
-            
-        }
-
-        private static readonly ScoreInterpreter _instance = new ScoreInterpreter();
         private List<Match> _matches;
 
-        private ScoreInterpreter()
+        public ScoreInterpreter()
         {
             _matches = new List<Match>();
+        }
+
+        public void Interpret(string match)
+        {
+            this.Interpret(new string[] { match });
         }
 
         public void Interpret(string[] matchLines)
@@ -46,11 +41,11 @@ namespace Interpreter
             {
                 foreach (Match match in _matches)
                 {
-                    matchScores.Append(match.ToString());
+                    matchScores.AppendLine(match.ToString());
                 }
             }
 
             return matchScores.ToString();
-        } 
+        }
     }
 }

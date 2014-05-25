@@ -3,3 +3,8 @@ C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpre
 C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.dll
 C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.pdb
 C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\bin\Debug\Interpreter.dll
+C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\bin\Debug\Interpreter.pdb
+C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.dll
+C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.pdb

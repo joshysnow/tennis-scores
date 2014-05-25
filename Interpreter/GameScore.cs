@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Interpreter
+﻿namespace Interpreter
 {
     internal struct GameScore
     {
@@ -22,33 +20,49 @@ namespace Interpreter
             _value = type;
         }
 
-        public GameScore Next()
+        public GameScore Increase()
         {
-            GameScore nextScore;
+            GameScore newScore;
 
             switch (_value)
             {
                 case _LOVE:
-                    nextScore = LOVE;
+                    newScore = FIFTEEN;
                     break;
                 case _FIFTEEN:
-                    nextScore = THIRTY;
+                    newScore = THIRTY;
                     break;
                 case _THIRTY:
-                    nextScore = FORTY;
+                    newScore = FORTY;
                     break;
                 case _FORTY:
-                    nextScore = ADVANTAGE;
+                    newScore = ADVANTAGE;
                     break;
                 case _ADVANTAGE:
-                    nextScore = this;
+                    newScore = this;
                     break;
                 default:
-                    nextScore = FIFTEEN;
+                    newScore = LOVE;
                     break;
             }
 
-            return nextScore;
+            return newScore;
+        }
+
+        public GameScore Decrease()
+        {
+            GameScore newScore;
+
+            if (_value == _ADVANTAGE)
+            {
+                newScore = FORTY;
+            }
+            else
+            {
+                newScore = this;
+            }
+
+            return newScore;
         }
 
         public static bool operator ==(GameScore left, GameScore right)

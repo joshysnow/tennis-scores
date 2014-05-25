@@ -1,37 +1,49 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace Interpreter
 {
-    internal class Set
+    internal sealed class Set : IReader
     {
-        private Game _game;
-        private short _serverScore;
-        private short _receiverScore;
+        private List<Game> _games;
+        private Game _current;
+        private bool _setWon;
 
         public Set()
         {
-            _serverScore = 0;
-            _receiverScore = 0;
+            _games = new List<Game>();
+            _current = new Game();
         }
 
-        public bool ReadScore(char score)
+        public override bool WinConditionMet()
         {
-            bool setWon = false;
+            return _setWon;
+        }
 
-            if (!char.IsWhiteSpace(score))
+        protected override void ExtractValue(char character)
+        {
+            _current.ReadCharacter(character);
+
+            if (_current.WinConditionMet())
             {
-                //_game = new Game();
-                //_game.ReadScore(score);
-
-                
+                _games.Add(_current);
+                _current = new Game();
             }
-
-            return setWon;
         }
 
-        public override string ToString()
+        protected override void CalculateWinCondition()
         {
-            return base.ToString();
+            // Check minimum number of games has been completed.
+            if (_games.Count >= 6)
+            {
+                foreach (Game game in _games)
+                {
+                    // Get each score for both players.
+                }
+            }
+            else
+            {
+                _setWon = false;
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace TennisScores
                     string[] inputFile = File.ReadAllLines(args[INPUT_FILE_ARG]);
                     
                     // Test if output directory exists. Create it if not?
-                    ScoreInterpreter interpreter = ScoreInterpreter.Instance;
+                    ScoreInterpreter interpreter = new ScoreInterpreter();
                     interpreter.Interpret(inputFile);
                 }
                 else
