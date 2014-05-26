@@ -9,6 +9,7 @@ namespace TennisScores
     {
         private static byte REQUIRED_ARGS_LENGTH = 2;
         private static byte INPUT_FILE_ARG = 0;
+        private static byte OUTPUT_FILE_ARG = 1;
 
         public static void Main(string[] args)
         {

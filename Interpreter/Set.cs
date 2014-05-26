@@ -1,17 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Interpreter
 {
     internal sealed class Set : IReader
     {
         private List<Game> _games;
-        private Game _current;
+        private Player _one;
+        private Player _two;
         private bool _setWon;
 
-        public Set()
+        public Set(Player one, Player two)
         {
             _games = new List<Game>();
-            _current = new Game();
+            _one = one;
+            _two = two;
+            _setWon = false;
         }
 
         public override bool WinConditionMet()
@@ -19,31 +24,119 @@ namespace Interpreter
             return _setWon;
         }
 
-        protected override void ExtractValue(char character)
+        public override string GetScore()
         {
-            _current.ReadCharacter(character);
+            // If the set hasn't been won when this has been called
+                // Then the scores need to be added up to the last game.
+                // Each time the server swaps so it is clear that scores need to follow this pattern
 
-            if (_current.WinConditionMet())
+
+            // If the set has been won, then swap the scores over every time for each set
+                // The server won? Add score. Swap. Server won? increment right or left?
+
+            string score = string.Empty;
+
+            if (WinConditionMet() || _games.Count == 0)
             {
-                _games.Add(_current);
-                _current = new Game();
+                SetScore setScore = GetSetScore(_games);
+                score = setScore.FormatScore();
+            }
+            //else if (_games.Count == 1)
+            //{
+            //    SetScore setScore = GetSetScore(_games);
+
+            //    Game lastGame = _games.Last();
+
+            //    if (!lastGame.WinConditionMet())
+            //    {
+            //        string lastGameScore = lastGame.GetScore();
+            //        score = setScore.FormatScore() + " " + lastGameScore;
+            //    }
+            //    else
+            //    {
+            //        score = setScore.FormatScore();
+            //    }               
+            //}
+            else
+            {
+                List<Game> gamesClone = _games.GetRange(0, _games.Count);
+                Game lastGame = gamesClone.Last();
+
+                if (!lastGame.WinConditionMet())
+                {
+                    gamesClone.Remove(lastGame);
+                }
+
+                SetScore setScore = GetSetScore(gamesClone);
+                score = lastGame.WinConditionMet() ? setScore.FormatScore() : setScore.FormatScore() + " " + lastGame.GetScore();
+            }
+
+            return score;
+        }
+
+        protected override void Update(char character)
+        {
+            if (_games.Count == 0 || _games.Last().WinConditionMet())
+            {
+                CreateNewGame();
+            }
+
+            _games.Last().ReadCharacter(character);
+        }
+
+        protected override void Analyse()
+        {
+            Game current = _games.Last();
+
+            if (current.WinConditionMet())
+            {
+                // Swap the players.
+                Player.SwapPositions(_one, _two);
+
+                // Check minimum number of games has been completed.
+                if (_games.Count >= 6)
+                {
+                    SetScore score = GetSetScore(_games);
+
+                    byte difference = (byte)Math.Abs(score.ServerScore - score.ReceiverScore);
+
+                    if (difference >= 2)
+                    {
+                        _setWon = true;
+                    }
+                }
             }
         }
 
-        protected override void CalculateWinCondition()
+        private void CreateNewGame()
         {
-            // Check minimum number of games has been completed.
-            if (_games.Count >= 6)
+            _games.Add(new Game((Player)_one.Clone(), (Player)_two.Clone()));
+        }
+
+        private SetScore GetSetScore(List<Game> games)
+        {
+            SetScore score = new SetScore();
+
+            foreach (Game game in games)
             {
-                foreach (Game game in _games)
+                if (game.WinConditionMet())
                 {
-                    // Get each score for both players.
+                    if (game.ServerScore > game.ReceiverScore)
+                    {
+                        // Increase left.
+                        score.ServerScore++;
+                    }
+                    else
+                    {
+                        // Increase right.
+                        score.ReceiverScore++;
+                    }
+
+                    score.Swap();
                 }
             }
-            else
-            {
-                _setWon = false;
-            }
+
+            return score;
         }
     }
 }

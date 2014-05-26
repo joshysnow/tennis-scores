@@ -10,18 +10,20 @@ namespace Interpreter
     {
         public void ReadCharacter(char character)
         {
-            ExtractValue(character);
-            CalculateWinCondition();
+            Update(character);
+            Analyse();
         }
 
         public abstract bool WinConditionMet();
 
-        protected virtual void ExtractValue(char character)
+        public abstract string GetScore();
+
+        protected virtual void Update(char character)
         {
 
         }
 
-        protected virtual void CalculateWinCondition()
+        protected virtual void Analyse()
         {
 
         }

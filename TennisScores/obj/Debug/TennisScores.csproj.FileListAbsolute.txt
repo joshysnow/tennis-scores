@@ -14,3 +14,12 @@ C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisSc
 C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\Interpreter.dll
 C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\Interpreter.pdb
 C:\Users\Joshua\OneDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\obj\Debug\TennisScores.csprojResolveAssemblyReference.cache
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\MbUnit.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\Gallio.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\NHamcrest.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\MbUnit.pdb
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\MbUnit.xml
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\Gallio.pdb
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\Gallio.xml
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\NHamcrest.pdb
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\TennisScores\bin\Debug\Gallio.XmlSerializers.dll

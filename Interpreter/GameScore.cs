@@ -80,6 +80,16 @@
             return !(left == right);
         }
 
+        public static bool operator >(GameScore left, GameScore right)
+        {
+            return ((left._value > right._value) && (right != ADVANTAGE)) || ((left == ADVANTAGE) && (right != ADVANTAGE));
+        }
+
+        public static bool operator <(GameScore left, GameScore right)
+        {
+            return right > left;
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null)

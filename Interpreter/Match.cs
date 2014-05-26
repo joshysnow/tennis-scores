@@ -16,7 +16,13 @@ namespace Interpreter
 
         public void ReadMatch(string matchScores)
         {
-            Set set = new Set();
+            Player one = new Player('A');
+            Player two = new Player('B');
+
+            one.Position = PlayerPosition.Server;
+            two.Position = PlayerPosition.Receiver;
+
+            Set set = new Set(one, two);
             _sets.Add(set);
 
             char[] scores = matchScores.ToCharArray();
@@ -27,9 +33,14 @@ namespace Interpreter
 
                 if (set.WinConditionMet())
                 {
-                    set = new Set();
+                    set = new Set(one, two);
                 }
             }
+        }
+
+        public void GetMatchScore()
+        {
+
         }
 
         public override string ToString()
