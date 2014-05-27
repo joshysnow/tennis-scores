@@ -38,18 +38,14 @@ namespace Interpreter
             }
         }
 
-        public void GetMatchScore()
-        {
-
-        }
-
-        public override string ToString()
+        public string GetMatchScore()
         {
             StringBuilder setScores = new StringBuilder();
 
             foreach (Set set in _sets)
             {
-                setScores.Append(set.ToString());
+                setScores.Append(set.GetScore());
+                setScores.Append(" ");
             }
 
             return setScores.ToString();

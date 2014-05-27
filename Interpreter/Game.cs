@@ -54,6 +54,11 @@
 
         protected override void Update(char character)
         {
+            if (WinConditionMet())
+            {
+                return;
+            }
+
             if (character == PlayerOne.CharIdentifier)
             {
                 UpdatePlayer(PlayerOne);

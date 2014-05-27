@@ -16,3 +16,4 @@ C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpre
 C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\bin\Debug\MbUnit.xml
 C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\bin\Debug\NHamcrest.pdb
 C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\bin\Debug\Gallio.XmlSerializers.dll
+C:\Users\Joshua\SkyDrive\Documents\Tracsis\Tracsis Problem\TennisScores\Interpreter\obj\Debug\Interpreter.csprojResolveAssemblyReference.cache

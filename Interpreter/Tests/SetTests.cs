@@ -38,6 +38,7 @@ namespace Interpreter.Tests
         [Row("AAAABBBB", "1-1", false)]
         [Row("AAAABBBBB", "1-1 0-15", false)]
         [Row("AAAABBBBA", "1-1 15-0", false)]
+        [Row("AAAA AAAA AAAA AAAA AAAA AAAA", "6-0", true)]
         public void Inputs(string input, string output, bool setWon)
         {
             Player one = new Player('A');

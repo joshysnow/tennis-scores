@@ -10,6 +10,7 @@ namespace Interpreter
         private Player _one;
         private Player _two;
         private bool _setWon;
+        private bool _validCharacter;
 
         public Set(Player one, Player two)
         {
@@ -17,6 +18,7 @@ namespace Interpreter
             _one = one;
             _two = two;
             _setWon = false;
+            _validCharacter = false;
         }
 
         public override bool WinConditionMet()
@@ -41,22 +43,6 @@ namespace Interpreter
                 SetScore setScore = GetSetScore(_games);
                 score = setScore.FormatScore();
             }
-            //else if (_games.Count == 1)
-            //{
-            //    SetScore setScore = GetSetScore(_games);
-
-            //    Game lastGame = _games.Last();
-
-            //    if (!lastGame.WinConditionMet())
-            //    {
-            //        string lastGameScore = lastGame.GetScore();
-            //        score = setScore.FormatScore() + " " + lastGameScore;
-            //    }
-            //    else
-            //    {
-            //        score = setScore.FormatScore();
-            //    }               
-            //}
             else
             {
                 List<Game> gamesClone = _games.GetRange(0, _games.Count);
@@ -76,6 +62,18 @@ namespace Interpreter
 
         protected override void Update(char character)
         {
+            if (WinConditionMet())
+            {
+                return;
+            }
+
+            _validCharacter = ValidateCharacter(character);
+
+            if (!_validCharacter)
+            {
+                return;
+            }
+
             if (_games.Count == 0 || _games.Last().WinConditionMet())
             {
                 CreateNewGame();
@@ -86,6 +84,11 @@ namespace Interpreter
 
         protected override void Analyse()
         {
+            if (_games.Count == 0 || !_validCharacter)
+            {
+                return;
+            }
+
             Game current = _games.Last();
 
             if (current.WinConditionMet())
@@ -137,6 +140,11 @@ namespace Interpreter
             }
 
             return score;
+        }
+
+        private bool ValidateCharacter(char character)
+        {
+            return _one.CharIdentifier == character || _two.CharIdentifier == character;
         }
     }
 }
